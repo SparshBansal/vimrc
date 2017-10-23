@@ -28,6 +28,9 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 Plugin 'Valloric/YouCompleteMe'
 
+
+Plugin 'https://github.com/jiangmiao/auto-pairs.git'
+
 " .ycm config file pointer necessary for autocomplete
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
@@ -40,11 +43,10 @@ Plugin 'honza/vim-snippets'
 " " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
 
-
-"" Ultisnips
-let g:UltiSnipsExpandTrigger="<S-tab>"
-let g:UltiSnipsListSnippets="<c-u-tab>"
-
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "
 " " If you want :UltiSnipsEdit to split your window.
 " let g:UltiSnipsEditSplit="vertical"
@@ -63,6 +65,7 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
 
 set exrc
 set mouse=a
@@ -83,3 +86,4 @@ set nowrap
 
 map <F5> :<C-U>!g++ -O2 -DLOCAL -std=c++11 -Wall -Wextra -Wno-unused-result -static %:r.cpp -o %:r<CR>
 map <F9> :<C-U>!./%:r<CR>
+
