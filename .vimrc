@@ -31,6 +31,8 @@ Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'https://github.com/jiangmiao/auto-pairs.git'
 
+Plugin 'https://github.com/scrooloose/nerdtree.git'
+
 " .ycm config file pointer necessary for autocomplete
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
@@ -39,6 +41,10 @@ Plugin 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
+
+Plugin 'https://github.com/xolox/vim-easytags.git'
+
+Plugin 'https://github.com/xolox/vim-misc.git'
 "
 " " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
@@ -50,6 +56,8 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "
 " " If you want :UltiSnipsEdit to split your window.
 " let g:UltiSnipsEditSplit="vertical"
+
+map <C-n> :NERDTreeToggle<CR>	
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -83,7 +91,7 @@ set autowrite
 set autoread
 
 set nowrap
-
+set bg=dark
+syntax on
 map <F5> :<C-U>!g++ -O2 -DLOCAL -std=c++11 -Wall -Wextra -Wno-unused-result -static %:r.cpp -o %:r<CR>
 map <F9> :<C-U>!./%:r<CR>
-
