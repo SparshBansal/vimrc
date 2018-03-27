@@ -1,6 +1,8 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+set ruler laststatus=2 title 
+set foldmethod=syntax
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -26,15 +28,12 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
-Plugin 'Valloric/YouCompleteMe'
-
-
+"
+Plugin 'airblade/vim-gitgutter'
 Plugin 'https://github.com/jiangmiao/auto-pairs.git'
-
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'https://github.com/scrooloose/nerdtree.git'
-
-" .ycm config file pointer necessary for autocomplete
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+Plugin 'https://github.com/danro/rename.vim.git'
 
 
 Plugin 'SirVer/ultisnips'
@@ -45,10 +44,11 @@ Plugin 'honza/vim-snippets'
 Plugin 'https://github.com/xolox/vim-easytags.git'
 
 Plugin 'https://github.com/xolox/vim-misc.git'
+
 "
 " " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
-
+"
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
@@ -86,7 +86,7 @@ set smartindent
 set cindent
 
 set showcmd
-set number
+set relativenumber
 set autowrite
 set autoread
 
@@ -95,3 +95,4 @@ set bg=dark
 syntax on
 map <F5> :<C-U>!g++ -O2 -DLOCAL -std=c++11 -Wall -Wextra -Wno-unused-result -static %:r.cpp -o %:r<CR>
 map <F9> :<C-U>!./%:r<CR>
+
